@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
-import { initialData, TaskItem } from './initialData'
+import { TaskItem } from './initialData'
 import { Draggable } from 'react-beautiful-dnd'
 
 const Container = styled.div`
@@ -12,9 +12,8 @@ margin-bottom : 8px;
 background-color :white;
 `
 
-const TaskView: React.FC<{ key: string, task: TaskItem, index: number }> =
-  ({ key, task, index }) => {
-    const [state, setState] = useState(initialData)
+const TaskView: React.FC<{ task: TaskItem, index: number }> =
+  ({ task, index }) => {
 
     return (
       <Draggable draggableId={task.id} index={index}>

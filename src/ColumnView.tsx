@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
-import { ColumnItem, initialData, TaskItem } from './initialData'
+import { ColumnItem, TaskItem } from './initialData'
 import TaskView from './TaskView'
 import { Droppable } from 'react-beautiful-dnd'
 
@@ -17,9 +17,8 @@ const TaskList = styled.div`
 padding: 8px;
 `
 
-const ColumnView: React.FC<{ key: string, column: ColumnItem, tasks: TaskItem[] }> =
-  ({ key, column, tasks }) => {
-    const [state, setState] = useState(initialData)
+const ColumnView: React.FC<{ column: ColumnItem, tasks: TaskItem[] }> =
+  ({ column, tasks }) => {
 
     return (
       <Container>
